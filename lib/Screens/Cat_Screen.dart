@@ -28,7 +28,7 @@ class CategoryScreen extends StatelessWidget {
       {
         "title": "Famine",
         "icon": Icons.copy_all_outlined,
-        "color": const Color(0xff0098ff)
+        "color": const Color.fromARGB(255, 79, 131, 165)
       },
       {
         "title": "Social",

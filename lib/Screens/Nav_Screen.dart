@@ -44,7 +44,11 @@ class _NavScreenState extends State<NavScreen> {
             );
           },
           pageBuilder: (context, animation, secondaryAnimation) {
-            return SizedBox(height: height * .7, width: width * .8, child: const Text('hi'),);
+            return SizedBox(
+              height: height * .7,
+              width: width * .8,
+              child: const Text('hi'),
+            );
           });
     }
 
@@ -57,14 +61,14 @@ class _NavScreenState extends State<NavScreen> {
               },
               child: const Icon(Icons.add, color: Colors.white),
               tooltip: 'Start fund raising',
-              backgroundColor: const Color.fromARGB(255, 24, 97, 156),
+              backgroundColor: const Color.fromARGB(255, 185, 53, 44),
             )
           : null,
       bottomNavigationBar: Container(
         margin: const EdgeInsets.only(bottom: 10, left: 15, right: 15),
         height: height * 0.09,
         decoration: BoxDecoration(
-            color: const Color.fromARGB(200, 185, 53, 44),
+            color: const Color.fromARGB(255, 24, 97, 156),
             borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(20),
               topRight: Radius.circular(20),
@@ -92,7 +96,7 @@ class _NavScreenState extends State<NavScreen> {
               icon: _selectedPageIndex == 0
                   ? const Icon(
                       Icons.home,
-                      color: Color.fromARGB(255, 6, 51, 88),
+                      color: Color.fromARGB(255, 6, 28, 46),
                     )
                   : const Icon(
                       Icons.home_outlined,
@@ -110,7 +114,7 @@ class _NavScreenState extends State<NavScreen> {
               icon: _selectedPageIndex == 1
                   ? const Icon(
                       Icons.category,
-                      color: Color.fromARGB(255, 6, 51, 88),
+                      color: Color.fromARGB(255, 6, 28, 46),
                     )
                   : const Icon(
                       Icons.category_outlined,
@@ -128,7 +132,7 @@ class _NavScreenState extends State<NavScreen> {
               icon: _selectedPageIndex == 2
                   ? const Icon(
                       Icons.info,
-                      color: Color.fromARGB(255, 6, 51, 88),
+                      color: Color.fromARGB(255, 6, 28, 46),
                     )
                   : const Icon(
                       Icons.info_outlined,
