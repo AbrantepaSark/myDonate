@@ -3,7 +3,15 @@
 import 'package:flutter/material.dart';
 
 class SingleDonate extends StatelessWidget {
-  const SingleDonate({Key? key}) : super(key: key);
+  final String category, image, days, amount;
+
+  const SingleDonate({
+    Key? key,
+    required this.category,
+    required this.image,
+    required this.days,
+    required this.amount,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,12 +21,12 @@ class SingleDonate extends StatelessWidget {
           width: 180,
           height: 230,
           margin: const EdgeInsets.symmetric(horizontal: 10),
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/images/health.jpg"),
+              image: AssetImage(image),
               fit: BoxFit.cover,
             ),
-            borderRadius: BorderRadius.all(
+            borderRadius: const BorderRadius.all(
               Radius.circular(12),
             ),
           ),
@@ -38,22 +46,22 @@ class SingleDonate extends StatelessWidget {
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 Text(
-                  "Health Care",
-                  style: TextStyle(
+                  category,
+                  style: const TextStyle(
                       color: Colors.white,
                       fontSize: 16,
                       fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 Text(
-                  "20 Days Left",
-                  style: TextStyle(color: Colors.white, fontSize: 13),
+                  days,
+                  style: const TextStyle(color: Colors.white, fontSize: 13),
                 ),
                 Text(
-                  "\$20,000 ETH-USD",
-                  style: TextStyle(
+                  amount,
+                  style: const TextStyle(
                     color: Color.fromARGB(255, 183, 212, 15),
                   ),
                 ),

@@ -2,32 +2,33 @@
 import 'package:flutter/material.dart';
 
 class CustomBudge extends StatelessWidget {
-  const CustomBudge({Key? key}) : super(key: key);
+  final IconData icon;
+  final String heading;
+  final String text;
+  const CustomBudge({
+    Key? key,
+    required this.icon,
+    required this.heading,
+    required this.text,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      height: 80,
-      width: double.infinity,
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(12)),
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            Color.fromARGB(230, 24, 97, 156),
-            Color.fromARGB(200, 185, 53, 44),
-          ],
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+          icon,
+          size: 34,
+          color: const Color(0xff217AE2),
         ),
-      ),
-      child: const Text(
-        " We restore hope to the hopeless, let's build the world together",
-        textAlign: TextAlign.center,
-        style: TextStyle(
-            color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
-      ),
+        const SizedBox(height: 5),
+        Text(
+          heading,
+          style: const TextStyle(fontWeight: FontWeight.bold),
+        ),
+        Text(text),
+      ],
     );
   }
 }
