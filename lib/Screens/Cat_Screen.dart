@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-//import 'package:line_icons/line_icons.dart';
+import 'package:line_icons/line_icons.dart';
 
 import '../Widgets/singleCat.dart';
 
@@ -14,37 +14,37 @@ class CategoryScreen extends StatelessWidget {
     List<Map<String, dynamic>> category = [
       {
         "title": "Environmental",
-        "icon": Icons.people_outline,
+        "icon": LineIcons.leaf,
         "color": const Color.fromARGB(255, 134, 132, 132)
       },
       {
         "title": "Education",
-        "icon": Icons.school,
+        "icon": Icons.school_outlined,
         "color": const Color(0xffff5657)
       },
       {
         "title": "Disaster",
-        "icon": Icons.fireplace,
+        "icon": Icons.warning_amber_outlined,
         "color": const Color.fromARGB(255, 32, 189, 108)
       },
       {
         "title": "Health",
-        "icon": Icons.health_and_safety,
-        "color": const Color(0xffffd73c)
+        "icon": Icons.health_and_safety_outlined,
+        "color": const Color.fromARGB(255, 233, 195, 43)
       },
       {
         "title": "Famine",
-        "icon": Icons.copy_all_outlined,
+        "icon": Icons.table_bar_outlined,
         "color": const Color.fromARGB(255, 79, 131, 165)
       },
       {
         "title": "Social",
-        "icon": Icons.accessibility_new_outlined,
+        "icon": Icons.people_outline,
         "color": const Color.fromARGB(255, 107, 87, 87)
       },
       {
         "title": "War",
-        "icon": Icons.group,
+        "icon": Icons.local_fire_department_outlined,
         "color": const Color.fromARGB(255, 192, 167, 57)
       },
     ];

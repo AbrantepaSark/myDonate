@@ -29,7 +29,7 @@ class SingleCat extends StatelessWidget {
           children: [
             Icon(
               catIcon,
-              size: 30,
+              size: 50,
               color: Colors.white,
             ),
             const SizedBox(height: 10),
@@ -38,7 +38,7 @@ class SingleCat extends StatelessWidget {
             Text(
               catName,
               style: const TextStyle(
-                  fontSize: 15,
+                  fontSize: 17,
                   fontWeight: FontWeight.bold,
                   color: Colors.white),
             )

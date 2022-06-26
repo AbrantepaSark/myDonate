@@ -26,7 +26,7 @@ class _CreateDonateState extends State<CreateDonate> {
             },
             icon: const Icon(Icons.arrow_back_ios_new),
           ),
-          title: const Text('Create a Donation'),
+          title: const Text('Start New Donation'),
           bottom: const TabBar(
             tabs: [
               Tab(
