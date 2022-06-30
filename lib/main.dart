@@ -7,6 +7,7 @@ import './Screens/home_screen.dart';
 import './Screens/About_Screen.dart';
 import './Screens/Splash_Screen.dart';
 import './Screens/CreateDonation.dart';
+import './Screens/UserDashboard/Dashboard.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         CategoryScreen.routeName: (ctx) => const CategoryScreen(),
         AboutScreen.routeName: (ctx) => const AboutScreen(),
         CreateDonate.routeName: (ctx) => const CreateDonate(),
+        Dashboard.routeName: (ctx) => const Dashboard(),
       },
     );
   }

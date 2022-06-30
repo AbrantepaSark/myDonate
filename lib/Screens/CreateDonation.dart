@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-import './DonationCreator/Organization.dart';
-import './DonationCreator/Person.dart';
+import 'DonationCreator/Donate_form.dart';
+//import './DonationCreator/Person.dart';
 
 class CreateDonate extends StatefulWidget {
   static const routeName = 'createDonate';
@@ -45,8 +45,8 @@ class _CreateDonateState extends State<CreateDonate> {
         ),
         body: const TabBarView(
           children: [
-            CreateForOrganisation(),
-            CreateForPerson(),
+            DonateForm(type: "Organisation"),
+            DonateForm(type: "Individual"),
           ],
         ),
       ),

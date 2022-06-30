@@ -53,14 +53,17 @@ class CategoryScreen extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            margin: const EdgeInsets.symmetric(horizontal: 15),
+            margin: const EdgeInsets.symmetric(
+              horizontal: 15,
+              vertical: 5,
+            ),
             height: 60,
             width: double.infinity,
             alignment: Alignment.center,
             color: const Color.fromARGB(245, 240, 241, 244),
             child: const Text(
               'Categories',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
             ),
           ),
           const SizedBox(height: 20),

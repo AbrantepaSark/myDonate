@@ -16,8 +16,8 @@ class SingleCat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 230,
-      width: 180,
+      height: 220,
+      width: 160,
       child: Card(
         color: color,
         shape: RoundedRectangleBorder(

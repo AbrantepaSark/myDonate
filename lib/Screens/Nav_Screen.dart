@@ -8,6 +8,7 @@ import './home_screen.dart';
 import './Cat_Screen.dart';
 import './About_Screen.dart';
 import './CreateDonation.dart';
+import './UserDashboard/Dashboard.dart';
 
 class NavScreen extends StatefulWidget {
   const NavScreen({Key? key}) : super(key: key);
@@ -23,7 +24,7 @@ class _NavScreenState extends State<NavScreen> {
 
   @override
   void initState() {
-    _pages = const [HomeScreen(), CategoryScreen(), AboutScreen()];
+    _pages = const [HomeScreen(), CategoryScreen(), Dashboard(), AboutScreen()];
     super.initState();
   }
 
@@ -54,6 +55,7 @@ class _NavScreenState extends State<NavScreen> {
     //         );
     //       });
     // }
+    var height = MediaQuery.of(context).size.height;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -70,9 +72,9 @@ class _NavScreenState extends State<NavScreen> {
           : null,
       bottomNavigationBar: Container(
         color: const Color(0xff217AE2),
-        //color: const Color(0xff32ECB4),
+        height: height * 0.08,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 25),
+          padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10),
           child: GNav(
             rippleColor: Colors.grey[300]!,
             hoverColor: Colors.grey[100]!,
@@ -86,16 +88,25 @@ class _NavScreenState extends State<NavScreen> {
             color: Colors.black,
             tabs: const [
               GButton(
+                padding: EdgeInsets.all(10),
                 icon: LineIcons.home,
                 iconColor: Colors.white,
                 text: 'Home',
               ),
               GButton(
+                padding: EdgeInsets.all(10),
                 icon: LineIcons.heart,
                 iconColor: Colors.white,
                 text: 'Donations',
               ),
               GButton(
+                padding: EdgeInsets.all(10),
+                icon: LineIcons.user,
+                iconColor: Colors.white,
+                text: 'Account',
+              ),
+              GButton(
+                padding: EdgeInsets.all(10),
                 icon: LineIcons.infoCircle,
                 iconColor: Colors.white,
                 text: 'About',

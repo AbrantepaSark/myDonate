@@ -3,11 +3,11 @@
 import 'package:flutter/material.dart';
 
 class SingleDonate extends StatelessWidget {
-  final String category, image, days, amount;
+  final String heading, image, days, amount;
 
   const SingleDonate({
     Key? key,
-    required this.category,
+    required this.heading,
     required this.image,
     required this.days,
     required this.amount,
@@ -15,6 +15,19 @@ class SingleDonate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Widget description(IconData icon, Color color, String data) {
+      return Row(
+        children: [
+          Icon(icon, color: Colors.white, size: 18),
+          const SizedBox(width: 5),
+          Text(
+            data,
+            style: TextStyle(color: color),
+          ),
+        ],
+      );
+    }
+
     return Stack(
       children: [
         Container(
@@ -44,28 +57,26 @@ class SingleDonate extends StatelessWidget {
                 bottomRight: Radius.circular(12),
               ),
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  category,
-                  style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 5),
-                Text(
-                  days,
-                  style: const TextStyle(color: Colors.white, fontSize: 13),
-                ),
-                Text(
-                  amount,
-                  style: const TextStyle(
-                    color: Color.fromARGB(255, 183, 212, 15),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    heading,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                        color: Color.fromARGB(255, 179, 252, 33),
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold),
                   ),
-                ),
-              ],
+                  const SizedBox(height: 5),
+                  description(Icons.access_time_outlined, Colors.white, days),
+                  description(Icons.account_balance_wallet_outlined,
+                      Colors.white, amount),
+                ],
+              ),
             ),
           ),
         ),

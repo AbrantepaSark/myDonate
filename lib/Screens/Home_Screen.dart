@@ -19,14 +19,14 @@ class _HomeScreenState extends State<HomeScreen> {
     List<Map> donation = [
       {
         'id': 1,
-        'category': 'Health',
+        'heading': 'COVID Support',
         'image': 'assets/images/health.jpg',
         'days': '10 days left',
         'amount': '\$1000 ETH-USD',
       },
       {
         'id': 2,
-        'category': 'Education',
+        'heading': 'Australia Fire Outbreak',
         'image': 'assets/images/science.jpg',
         'days': '20 days left',
         'amount': '\$2000 ETH-USD',
@@ -98,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 scrollDirection: Axis.horizontal,
                 itemCount: donation.length,
                 itemBuilder: (ctx, i) => SingleDonate(
-                  category: donation[i]["category"],
+                  heading: donation[i]["heading"],
                   image: donation[i]["image"],
                   days: donation[i]["days"],
                   amount: donation[i]["amount"],
@@ -118,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 scrollDirection: Axis.horizontal,
                 itemCount: donation.length,
                 itemBuilder: (ctx, i) => SingleDonate(
-                  category: donation[i]["category"],
+                  heading: donation[i]["heading"],
                   image: donation[i]["image"],
                   days: donation[i]["days"],
                   amount: donation[i]["amount"],
