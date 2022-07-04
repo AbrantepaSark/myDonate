@@ -47,6 +47,11 @@ class CategoryScreen extends StatelessWidget {
         "icon": Icons.local_fire_department_outlined,
         "color": const Color.fromARGB(255, 192, 167, 57)
       },
+      {
+        "title": "Others",
+        "icon": Icons.add_home_outlined,
+        "color": const Color.fromARGB(255, 153, 147, 119)
+      },
     ];
 
     return SafeArea(
