@@ -22,14 +22,15 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
-    var container;
+    // ignore: prefer_const_constructors
+    Widget container = SizedBox();
 
     if (currentPage == DashboardSections.summary) {
-      container = const SummaryScreen();
+      container = SummaryScreen(height: height);
     } else if (currentPage == DashboardSections.funds) {
-      container = const SummaryScreen();
+      container = const FundsScreen();
     } else if (currentPage == DashboardSections.donation) {
-      container = const SummaryScreen();
+      container = const DonationScreen();
     }
 
     return Scaffold(
@@ -45,7 +46,52 @@ class _DashboardState extends State<Dashboard> {
                   onPressed: () => Scaffold.of(context).openDrawer()),
         ),
       ),
-      body: container,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+          child: Column(
+            children: [
+              Container(
+                height: 90,
+                width: double.infinity,
+                padding: const EdgeInsets.all(15),
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(15)),
+                  gradient: LinearGradient(
+                    colors: [
+                      Color.fromARGB(255, 3, 98, 240),
+                      // Color.fromARGB(143, 214, 73, 63),
+                      Color.fromARGB(183, 75, 123, 76),
+                    ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.topRight,
+                  ),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Text(
+                      'Welcome, Mends Albert',
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontSize: 21,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Text(
+                      'Check your Statistics on myDonate',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
+                ),
+              ),
+              container,
+            ],
+          ),
+        ),
+      ),
       drawer: Drawer(
         elevation: 1,
         child: ListView(
@@ -80,6 +126,7 @@ class _DashboardState extends State<Dashboard> {
               onTap: () {
                 setState(() {
                   currentPage = DashboardSections.summary;
+                  Navigator.of(context).pop();
                 });
               },
             ),
@@ -92,6 +139,7 @@ class _DashboardState extends State<Dashboard> {
               onTap: () {
                 setState(() {
                   currentPage = DashboardSections.funds;
+                  Navigator.of(context).pop();
                 });
               },
             ),
@@ -102,7 +150,10 @@ class _DashboardState extends State<Dashboard> {
                 style: TextStyle(fontSize: 16.0),
               ),
               onTap: () {
-                currentPage = DashboardSections.donation;
+                setState(() {
+                  currentPage = DashboardSections.donation;
+                  Navigator.of(context).pop();
+                });
               },
             ),
           ],
