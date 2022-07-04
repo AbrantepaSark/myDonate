@@ -60,15 +60,15 @@ class _SummaryScreenState extends State<SummaryScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Icon(icon, size: 45),
+          Icon(icon, size: 40),
           Text(
             heading,
-            style: const TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           Text(text),
           Text(
             number,
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 21),
+            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
           ),
         ],
       ),

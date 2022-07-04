@@ -16,6 +16,51 @@ class _SingleDonateScreenState extends State<SingleDonateScreen> {
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
+    var dataTable = DataTable(
+      columns: const [
+        DataColumn(
+          label: Text(
+            'Address',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+        ),
+        DataColumn(
+          label: Text(
+            'Amount',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+        ),
+        DataColumn(
+          label: Text(
+            'Date',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+        ),
+      ],
+      rows: const [
+        DataRow(
+          cells: [
+            DataCell(Text('0x000000')),
+            DataCell(Text('4ETH')),
+            DataCell(Text('26th June, 2022')),
+          ],
+        ),
+        DataRow(
+          cells: [
+            DataCell(Text('0x000000')),
+            DataCell(Text('4ETH')),
+            DataCell(Text('26th June, 2022')),
+          ],
+        ),
+        DataRow(
+          cells: [
+            DataCell(Text('0x000000')),
+            DataCell(Text('30ETH')),
+            DataCell(Text('26th June, 2022)')),
+          ],
+        ),
+      ],
+    );
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -113,67 +158,25 @@ class _SingleDonateScreenState extends State<SingleDonateScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Text('30+ Donated'),
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: const Text('5 Days Left'),
-                      ),
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 10),
+                        alignment: Alignment.center,
+                        decoration: const BoxDecoration(
+                            color: Color.fromARGB(173, 54, 51, 227),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(30))),
+                        child: const Text(
+                          "20 Days Left",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      )
                     ],
                   ),
                   const SizedBox(height: 10),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
-                    child: DataTable(
-                      columns: const [
-                        DataColumn(
-                          label: Text(
-                            'Title',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        DataColumn(
-                          label: Text(
-                            'Description',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        DataColumn(
-                          label: Text(
-                            'Amount Donated',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ],
-                      rows: const [
-                        DataRow(
-                          cells: [
-                            DataCell(Text('Support HIV')),
-                            DataCell(Text('Description here')),
-                            DataCell(Text('USD-10,000(23ETH)')),
-                          ],
-                        ),
-                        DataRow(
-                          cells: [
-                            DataCell(Text('Support For COVID')),
-                            DataCell(Text('Description here')),
-                            DataCell(Text('USD-10,000(23ETH)')),
-                          ],
-                        ),
-                        DataRow(
-                          cells: [
-                            DataCell(Text('Sudan Famine')),
-                            DataCell(Text('Description here')),
-                            DataCell(Text('USD-10,000(23ETH)')),
-                          ],
-                        ),
-                        DataRow(
-                          cells: [
-                            DataCell(Text('Child Education')),
-                            DataCell(Text('Description here')),
-                            DataCell(Text('Rejected')),
-                          ],
-                        ),
-                      ],
-                    ),
+                    child: dataTable,
                   ),
                 ],
               ),

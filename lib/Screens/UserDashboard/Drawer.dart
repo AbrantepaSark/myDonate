@@ -15,8 +15,19 @@ class CustomDrawer extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           Container(
-            color: const Color.fromARGB(221, 84, 55, 55),
-            height: height * 0.3,
+            height: height * 0.5,
+            decoration: const BoxDecoration(
+              color: Color.fromARGB(221, 208, 177, 177),
+              gradient: LinearGradient(
+                colors: [
+                  Color.fromARGB(255, 3, 98, 240),
+                  Color.fromARGB(143, 214, 73, 63),
+                  Color.fromARGB(183, 75, 123, 76),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.topRight,
+              ),
+            ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
@@ -26,7 +37,7 @@ class CustomDrawer extends StatelessWidget {
                   child: Icon(Icons.person, size: 60),
                 ),
                 SizedBox(height: 10),
-                Text('0xdadkg97y6sdf0',
+                Text('0xdadkg97y6sdf0hgg',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,
@@ -34,22 +45,22 @@ class CustomDrawer extends StatelessWidget {
               ],
             ),
           ),
-          ListTile(
-            leading: const Icon(Icons.add_chart_outlined),
-            title: const Text(
-              'Summary',
-              style: TextStyle(fontSize: 16.0),
-            ),
-            onTap: () {},
-          ),
-          ListTile(
-            leading: const Icon(Icons.account_balance_wallet_outlined),
-            title: const Text(
-              'Funds',
-              style: TextStyle(fontSize: 16.0),
-            ),
-            onTap: () {},
-          ),
+          // ListTile(
+          //   leading: const Icon(Icons.add_chart_outlined),
+          //   title: const Text(
+          //     'Summary',
+          //     style: TextStyle(fontSize: 16.0),
+          //   ),
+          //   onTap: () {},
+          // ),
+          // ListTile(
+          //   leading: const Icon(Icons.account_balance_wallet_outlined),
+          //   title: const Text(
+          //     'Funds',
+          //     style: TextStyle(fontSize: 16.0),
+          //   ),
+          //   onTap: () {},
+          // ),
           ListTile(
             leading: const Icon(LineIcons.heart),
             title: const Text(
