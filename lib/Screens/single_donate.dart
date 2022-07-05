@@ -160,7 +160,7 @@ class _SingleDonateScreenState extends State<SingleDonateScreen> {
                       const Text('30+ Donated'),
                       Container(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 15, vertical: 10),
+                            horizontal: 20, vertical: 10),
                         alignment: Alignment.center,
                         decoration: const BoxDecoration(
                             color: Color.fromARGB(173, 54, 51, 227),
