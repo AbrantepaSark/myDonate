@@ -44,13 +44,13 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Text(
-            //   'MyDonate',
-            //   style: TextStyle(
-            //       color: const Color.fromARGB(255, 6, 57, 99),
-            //       fontSize: width * 0.07,
-            //       fontWeight: FontWeight.bold),
-            // ),
+            Text(
+              'MyDonate',
+              style: TextStyle(
+                  color: const Color.fromARGB(255, 6, 57, 99),
+                  fontSize: width * 0.07,
+                  fontWeight: FontWeight.bold),
+            ),
             Text(
               "Donate to support",
               style: TextStyle(
