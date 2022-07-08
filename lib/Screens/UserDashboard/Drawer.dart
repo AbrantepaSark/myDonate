@@ -21,8 +21,8 @@ class CustomDrawer extends StatelessWidget {
               gradient: LinearGradient(
                 colors: [
                   Color.fromARGB(255, 3, 98, 240),
-                  Color.fromARGB(143, 214, 73, 63),
-                  Color.fromARGB(183, 75, 123, 76),
+                  // Color.fromARGB(143, 214, 73, 63),
+                  // Color.fromARGB(183, 75, 123, 76),
                 ],
                 begin: Alignment.topLeft,
                 end: Alignment.topRight,

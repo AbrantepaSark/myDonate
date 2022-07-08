@@ -12,10 +12,19 @@ class SingleDonateScreen extends StatefulWidget {
 }
 
 class _SingleDonateScreenState extends State<SingleDonateScreen> {
+  bool viewDoner = false;
+
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
+
+    void viewDonerToggler() {
+      setState(() {
+        viewDoner = !viewDoner;
+      });
+    }
+
     var dataTable = DataTable(
       columns: const [
         DataColumn(
@@ -160,10 +169,10 @@ class _SingleDonateScreenState extends State<SingleDonateScreen> {
                       const Text('30+ Donated'),
                       Container(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 10),
+                            horizontal: 15, vertical: 7),
                         alignment: Alignment.center,
                         decoration: const BoxDecoration(
-                            color: Color.fromARGB(173, 54, 51, 227),
+                            color: Color.fromARGB(185, 54, 51, 227),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(30))),
                         child: const Text(
@@ -173,11 +182,55 @@ class _SingleDonateScreenState extends State<SingleDonateScreen> {
                       )
                     ],
                   ),
-                  const SizedBox(height: 10),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: dataTable,
+                  GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      width: width,
+                      alignment: Alignment.center,
+                      padding: const EdgeInsets.symmetric(vertical: 15),
+                      margin: const EdgeInsets.symmetric(vertical: 20),
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(30)),
+                        gradient: LinearGradient(
+                          colors: [
+                            Color.fromARGB(255, 3, 58, 240),
+                            Color.fromARGB(143, 214, 73, 63),
+                            // Color.fromARGB(183, 75, 123, 76),
+                          ],
+                          begin: Alignment.topLeft,
+                          end: Alignment.topRight,
+                        ),
+                      ),
+                      child: const Text(
+                        'Donate',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
                   ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: TextButton(
+                        onPressed: viewDonerToggler,
+                        style: const ButtonStyle(
+
+                            // foregroundColor: MaterialStateProperty.all<Color>(
+                            //     Colors.blue[900]!),
+                            ),
+                        child: Text(
+                          'View Doners',
+                          style: TextStyle(
+                            color: Colors.blue[900]!,
+                            decoration: TextDecoration.underline,
+                          ),
+                        )),
+                  ),
+                  const SizedBox(height: 10),
+                  viewDoner
+                      ? SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: dataTable,
+                        )
+                      : const SizedBox(),
                 ],
               ),
             )
