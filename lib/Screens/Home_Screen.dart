@@ -1,6 +1,8 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+//import 'package:line_icons/line_icons.dart';
+//import 'package:flutter_svg/flutter_svg.dart';
 
 import '../Widgets/badge.dart';
 import '../Widgets/singleDonate.dart';
@@ -16,6 +18,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
     List<Map> donation = [
       {
         'id': 1,
@@ -47,37 +50,44 @@ class _HomeScreenState extends State<HomeScreen> {
             Text(
               'MyDonate',
               style: TextStyle(
-                  color: const Color.fromARGB(255, 6, 57, 99),
+                  color: Colors.grey[900],
                   fontSize: width * 0.07,
                   fontWeight: FontWeight.bold),
             ),
             Text(
-              "Donate to support",
+              "Put a smile on someone's faces",
               style: TextStyle(
                 fontSize: width * 0.038,
-                color: const Color.fromARGB(255, 8, 58, 99),
+                color: Colors.grey[900],
               ),
             ),
-            const SizedBox(height: 10),
+
+            const SizedBox(height: 20),
             Container(
-              height: 120,
+              height: height * .55,
               width: double.infinity,
-              color: const Color.fromARGB(245, 240, 241, 244),
-              child: Row(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(
+                  Radius.circular(12),
+                ),
+              ),
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: const [
                   CustomBudge(
-                    icon: Icons.add_chart_outlined,
+                    iconName: "assets/images/heart-cirlcle-outlined.svg",
                     heading: '20k+',
                     text: 'Fundraisers',
                   ),
                   CustomBudge(
-                    icon: Icons.person_outline,
+                    iconName: "assets/images/heart-cirlcle-outlined.svg",
                     heading: '10M+',
                     text: 'Donated',
                   ),
                   CustomBudge(
-                    icon: Icons.account_balance_wallet_outlined,
+                    iconName: "assets/images/heart-cirlcle-outlined.svg",
                     heading: '500ETH+',
                     text: 'Raised',
                   ),
@@ -87,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
             //const CustomBudge(),
             const SizedBox(height: 20),
             const Text(
-              'Recent Donations',
+              'Pinned Donations',
               style: TextStyle(color: Colors.red, fontSize: 15),
             ),
             const Divider(height: 20),

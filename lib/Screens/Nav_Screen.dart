@@ -58,7 +58,7 @@ class _NavScreenState extends State<NavScreen> {
     var height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xfff5f5f5),
       body: _pages[_selectedPageIndex],
       floatingActionButton: _selectedPageIndex == 0
           ? FloatingActionButton(
