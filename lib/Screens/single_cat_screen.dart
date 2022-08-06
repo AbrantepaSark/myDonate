@@ -62,6 +62,7 @@ class SingleCatScreen extends StatelessWidget {
             image: donation[i]["image"],
             days: donation[i]["days"],
             amount: donation[i]["amount"],
+            globe: donation[i]["globe"],
           ),
         ),
       ),

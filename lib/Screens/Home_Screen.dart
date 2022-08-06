@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../Widgets/badge.dart';
 import '../Widgets/singleDonate.dart';
+import '../Widgets/singleCat.dart';
 
 class HomeScreen extends StatefulWidget {
   static const routeName = "/home";
@@ -19,6 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
+
     List<Map> donation = [
       {
         'id': 1,
@@ -26,6 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
         'image': 'assets/images/health.jpg',
         'days': '10 days left',
         'amount': '\$1000 ETH-USD',
+        'globe': 'Sultanate of man',
       },
       {
         'id': 2,
@@ -33,8 +36,52 @@ class _HomeScreenState extends State<HomeScreen> {
         'image': 'assets/images/science.jpg',
         'days': '20 days left',
         'amount': '\$2000 ETH-USD',
+        'globe': 'Sultanate of man',
       },
     ];
+    List<Map<String, dynamic>> category = [
+      {
+        "title": "Environmental",
+        "icon": "assets/images/leaf-outline.svg",
+        "color": const Color(0xffff5657)
+      },
+      {
+        "title": "Education",
+        "icon": "assets/images/book-outline.svg",
+        "color": const Color.fromARGB(255, 134, 132, 132)
+      },
+      {
+        "title": "Disaster",
+        "icon": "assets/images/flask-outline.svg",
+        "color": const Color.fromARGB(255, 32, 189, 108)
+      },
+      {
+        "title": "Health",
+        "icon": "assets/images/pulse-outline.svg",
+        "color": const Color.fromARGB(255, 233, 195, 43)
+      },
+      {
+        "title": "Famine",
+        "icon": "assets/images/fast-food-outline.svg",
+        "color": const Color.fromARGB(255, 79, 131, 165)
+      },
+      {
+        "title": "Community",
+        "icon": "assets/images/people-outline.svg",
+        "color": const Color.fromARGB(255, 107, 87, 87)
+      },
+      {
+        "title": "War",
+        "icon": "assets/images/sad-outline.svg",
+        "color": const Color.fromARGB(255, 192, 167, 57)
+      },
+      {
+        "title": "Others",
+        "icon": "assets/images/help-outline.svg",
+        "color": const Color.fromARGB(255, 153, 147, 119)
+      },
+    ];
+
     var width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: SingleChildScrollView(
@@ -51,20 +98,20 @@ class _HomeScreenState extends State<HomeScreen> {
               'MyDonate',
               style: TextStyle(
                   color: Colors.grey[900],
-                  fontSize: width * 0.07,
+                  fontSize: width * 0.08,
                   fontWeight: FontWeight.bold),
             ),
             Text(
               "Put a smile on someone's faces",
               style: TextStyle(
-                fontSize: width * 0.038,
+                fontSize: width * 0.045,
                 color: Colors.grey[900],
               ),
             ),
 
             const SizedBox(height: 20),
             Container(
-              height: height * .55,
+              height: height * .16,
               width: double.infinity,
               padding: const EdgeInsets.symmetric(vertical: 20),
               decoration: const BoxDecoration(
@@ -73,21 +120,21 @@ class _HomeScreenState extends State<HomeScreen> {
                   Radius.circular(12),
                 ),
               ),
-              child: Column(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: const [
                   CustomBudge(
-                    iconName: "assets/images/heart-cirlcle-outlined.svg",
+                    iconName: "assets/images/heart-circle-outline.svg",
                     heading: '20k+',
                     text: 'Fundraisers',
                   ),
                   CustomBudge(
-                    iconName: "assets/images/heart-cirlcle-outlined.svg",
+                    iconName: "assets/images/person-add-outline.svg",
                     heading: '10M+',
                     text: 'Donated',
                   ),
                   CustomBudge(
-                    iconName: "assets/images/heart-cirlcle-outlined.svg",
+                    iconName: "assets/images/wallet-outline.svg",
                     heading: '500ETH+',
                     text: 'Raised',
                   ),
@@ -96,33 +143,31 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             //const CustomBudge(),
             const SizedBox(height: 20),
-            const Text(
-              'Pinned Donations',
-              style: TextStyle(color: Colors.red, fontSize: 15),
+            Text(
+              'Categories',
+              style: TextStyle(color: Colors.grey[900], fontSize: 16),
             ),
-            const Divider(height: 20),
             SizedBox(
-              height: 230,
-              width: double.infinity,
+              height: 150,
               child: ListView.builder(
+                padding: const EdgeInsets.only(top: 8),
                 scrollDirection: Axis.horizontal,
-                itemCount: donation.length,
-                itemBuilder: (ctx, i) => SingleDonate(
-                  heading: donation[i]["heading"],
-                  image: donation[i]["image"],
-                  days: donation[i]["days"],
-                  amount: donation[i]["amount"],
+                itemCount: 8,
+                itemBuilder: (ctx, i) => SingleCat(
+                  catName: category[i]["title"],
+                  catIcon: category[i]["icon"],
+                  color: category[i]["color"],
                 ),
               ),
             ),
             const SizedBox(height: 20),
-            const Text(
-              'Trending Donations',
-              style: TextStyle(color: Colors.red, fontSize: 15),
+            Text(
+              'Pinned Donations',
+              style: TextStyle(color: Colors.grey[900], fontSize: 16),
             ),
             const Divider(height: 20),
             SizedBox(
-              height: 230,
+              height: 280,
               width: double.infinity,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
@@ -132,6 +177,28 @@ class _HomeScreenState extends State<HomeScreen> {
                   image: donation[i]["image"],
                   days: donation[i]["days"],
                   amount: donation[i]["amount"],
+                  globe: donation[i]["globe"],
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            Text(
+              'Recent Donations',
+              style: TextStyle(color: Colors.grey[900], fontSize: 15),
+            ),
+            const Divider(height: 20),
+            SizedBox(
+              height: 280,
+              width: double.infinity,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: donation.length,
+                itemBuilder: (ctx, i) => SingleDonate(
+                  heading: donation[i]["heading"],
+                  image: donation[i]["image"],
+                  days: donation[i]["days"],
+                  amount: donation[i]["amount"],
+                  globe: donation[i]["globe"],
                 ),
               ),
             ),

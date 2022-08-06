@@ -1,7 +1,8 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:line_icons/line_icons.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+//import 'package:line_icons/line_icons.dart';
 
 class SummaryScreen extends StatefulWidget {
   final double height;
@@ -18,24 +19,24 @@ class _SummaryScreenState extends State<SummaryScreen> {
       children: [
         const SizedBox(height: 30),
         summaryData(
-          LineIcons.handHoldingHeart,
+          'assets/images/heart-half-outline.svg',
           'Pending Funds',
           'All Funds To Be Approved',
           '5',
         ),
         const SizedBox(height: 30),
         summaryData(
-          LineIcons.heart,
+          'assets/images/heart-outline.svg',
           'Donations',
           'All Donations Made',
           '3',
         ),
         const SizedBox(height: 30),
         summaryData(
-          LineIcons.wallet,
+          'assets/images/wallet-outline.svg',
           'Donated',
           'Total Amount Donated',
-          '200 ETH',
+          '0.000000 ETH',
         ),
       ],
     );
@@ -60,15 +61,20 @@ class _SummaryScreenState extends State<SummaryScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Icon(icon, size: 40),
+          SvgPicture.asset(
+            icon,
+            height: 46,
+            color: const Color.fromARGB(255, 9, 39, 65),
+            allowDrawingOutsideViewBox: true,
+          ),
           Text(
             heading,
-            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
           ),
           Text(text),
           Text(
             number,
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 23),
           ),
         ],
       ),

@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+//import 'package:flutter_svg/flutter_svg.dart';
 
 // import './Drawer.dart';
 import './Screens/Summary.dart';
@@ -69,7 +70,7 @@ class _DashboardState extends State<Dashboard> {
             ),
           ),
           ListTile(
-            leading: const Icon(Icons.add_chart_outlined),
+            leading: const Icon(LineIcons.barChart),
             title: const Text(
               'Summary',
               style: TextStyle(fontSize: 16.0),
@@ -82,7 +83,7 @@ class _DashboardState extends State<Dashboard> {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.account_balance_wallet_outlined),
+            leading: const Icon(LineIcons.wallet),
             title: const Text(
               'Funds',
               style: TextStyle(fontSize: 16.0),
@@ -129,7 +130,7 @@ class _DashboardState extends State<Dashboard> {
           child: Column(
             children: [
               Container(
-                height: 90,
+                height: 110,
                 width: double.infinity,
                 padding: const EdgeInsets.all(15),
                 decoration: const BoxDecoration(
@@ -149,16 +150,24 @@ class _DashboardState extends State<Dashboard> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
                     Text(
-                      'Welcome, Username here',
+                      "Welcome,",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15),
+                    ),
+                    Text(
+                      '0x00067gj78fddkjg',
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
-                        fontSize: 21,
+                        fontSize: 18,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
                     ),
                     Text(
                       'Check your Statistics on myDonate',
+                      overflow: TextOverflow.ellipsis,
                       style: TextStyle(color: Colors.white),
                     ),
                   ],

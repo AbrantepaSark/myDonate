@@ -1,11 +1,12 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:line_icons/line_icons.dart';
 
 import '../Screens/single_donate.dart';
 
 class SingleDonate extends StatelessWidget {
-  final String heading, image, days, amount;
+  final String heading, image, days, amount, globe;
 
   const SingleDonate({
     Key? key,
@@ -13,6 +14,7 @@ class SingleDonate extends StatelessWidget {
     required this.image,
     required this.days,
     required this.amount,
+    required this.globe,
   }) : super(key: key);
 
   @override
@@ -20,10 +22,11 @@ class SingleDonate extends StatelessWidget {
     Widget description(IconData icon, Color color, String data) {
       return Row(
         children: [
-          Icon(icon, color: Colors.white, size: 18),
+          Icon(icon, color: Colors.black, size: 18),
           const SizedBox(width: 5),
           Text(
             data,
+            overflow: TextOverflow.ellipsis,
             style: TextStyle(color: color),
           ),
         ],
@@ -34,59 +37,67 @@ class SingleDonate extends StatelessWidget {
       onTap: () {
         Navigator.of(context).pushNamed(SingleDonateScreen.routeName);
       },
-      child: Stack(
-        children: [
-          Container(
-            width: 180,
-            height: 230,
-            margin: const EdgeInsets.symmetric(horizontal: 10),
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(image),
-                fit: BoxFit.cover,
+      child: Container(
+        width: 300,
+        margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: const BorderRadius.all(
+              Radius.circular(12),
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey[300]!,
+                blurRadius: 2,
+                spreadRadius: 1,
+                offset: const Offset(1, 2),
+              )
+            ]),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ClipRRect(
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(12),
+                topRight: Radius.circular(12),
               ),
-              borderRadius: const BorderRadius.all(
-                Radius.circular(12),
+              child: SizedBox(
+                height: 140,
+                width: double.infinity,
+                child: Image.asset(image,
+                    fit: BoxFit.cover, alignment: Alignment.topCenter),
               ),
             ),
-          ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              height: 100,
-              width: 180,
-              margin: const EdgeInsets.symmetric(horizontal: 10),
-              decoration: const BoxDecoration(
-                color: Colors.black54,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(12),
-                  bottomRight: Radius.circular(12),
-                ),
-              ),
+            Expanded(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                padding: const EdgeInsets.all(12),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      heading,
-                      overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                          color: Color.fromARGB(255, 179, 252, 33),
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        heading,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          color: Colors.grey[900],
                           fontSize: 15,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(height: 5),
-                    description(Icons.access_time_outlined, Colors.white, days),
-                    description(Icons.account_balance_wallet_outlined,
-                        Colors.white, amount),
-                  ],
-                ),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      //const SizedBox(height: 2),
+                      description(
+                          Icons.access_time_outlined, Colors.black, days),
+                      description(
+                        Icons.account_balance_wallet_outlined,
+                        Colors.black,
+                        amount,
+                      ),
+                      description(LineIcons.globe, Colors.black, globe),
+                    ]),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

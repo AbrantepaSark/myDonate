@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:line_icons/line_icons.dart';
+//import 'package:line_icons/line_icons.dart';
 
 import '../Widgets/singleCat.dart';
 
@@ -14,42 +14,42 @@ class CategoryScreen extends StatelessWidget {
     List<Map<String, dynamic>> category = [
       {
         "title": "Environmental",
-        "icon": LineIcons.leaf,
-        "color": const Color.fromARGB(255, 134, 132, 132)
-      },
-      {
-        "title": "Education",
-        "icon": Icons.school_outlined,
+        "icon": "assets/images/leaf-outline.svg",
         "color": const Color(0xffff5657)
       },
       {
+        "title": "Education",
+        "icon": "assets/images/book-outline.svg",
+        "color": const Color.fromARGB(255, 134, 132, 132)
+      },
+      {
         "title": "Disaster",
-        "icon": Icons.warning_amber_outlined,
+        "icon": "assets/images/flask-outline.svg",
         "color": const Color.fromARGB(255, 32, 189, 108)
       },
       {
         "title": "Health",
-        "icon": Icons.health_and_safety_outlined,
+        "icon": "assets/images/pulse-outline.svg",
         "color": const Color.fromARGB(255, 233, 195, 43)
       },
       {
         "title": "Famine",
-        "icon": Icons.table_bar_outlined,
+        "icon": "assets/images/fast-food-outline.svg",
         "color": const Color.fromARGB(255, 79, 131, 165)
       },
       {
-        "title": "Social",
-        "icon": Icons.people_outline,
+        "title": "Community",
+        "icon": "assets/images/people-outline.svg",
         "color": const Color.fromARGB(255, 107, 87, 87)
       },
       {
         "title": "War",
-        "icon": Icons.local_fire_department_outlined,
+        "icon": "assets/images/sad-outline.svg",
         "color": const Color.fromARGB(255, 192, 167, 57)
       },
       {
         "title": "Others",
-        "icon": Icons.add_home_outlined,
+        "icon": "assets/images/help-outline.svg",
         "color": const Color.fromARGB(255, 153, 147, 119)
       },
     ];
@@ -62,16 +62,16 @@ class CategoryScreen extends StatelessWidget {
               horizontal: 15,
               vertical: 5,
             ),
-            height: 60,
+            height: 50,
             width: double.infinity,
             alignment: Alignment.center,
-            color: const Color.fromARGB(245, 240, 241, 244),
+            color: Colors.grey[300],
             child: const Text(
               'Categories',
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
             ),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 10),
           Expanded(
             child: GridView.count(
               padding: const EdgeInsets.all(15),

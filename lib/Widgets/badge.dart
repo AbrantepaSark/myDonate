@@ -18,15 +18,20 @@ class CustomBudge extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SvgPicture.asset(iconName, height: 50),
+        SvgPicture.asset(
+          iconName,
+          height: 30,
+          color: Colors.blue[600],
+          allowDrawingOutsideViewBox: true,
+        ),
         const SizedBox(height: 5),
         Text(
           heading,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
         ),
         Text(
           text,
-          style: const TextStyle(fontSize: 20),
+          style: const TextStyle(fontSize: 14),
         ),
       ],
     );

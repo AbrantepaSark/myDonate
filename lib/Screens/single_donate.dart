@@ -101,8 +101,24 @@ class _SingleDonateScreenState extends State<SingleDonateScreen> {
                 },
               ),
             ),
-            //const CustomedButton(),
-            //const MyWidget(),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              style: ButtonStyle(
+                  alignment: Alignment.center,
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ))),
+              onPressed: () {},
+              child: const SizedBox(
+                  height: 45,
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Submit',
+                    ),
+                  )),
+            )
           ],
         ),
       );
@@ -182,7 +198,7 @@ class _SingleDonateScreenState extends State<SingleDonateScreen> {
                       const Text(
                         'Support For Sudan Famine',
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20),
+                            fontWeight: FontWeight.bold, fontSize: 17),
                       ),
                       Row(
                         //mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -275,7 +291,7 @@ class _SingleDonateScreenState extends State<SingleDonateScreen> {
                             gradient: LinearGradient(
                               colors: [
                                 Color.fromARGB(255, 3, 58, 240),
-                                Color.fromARGB(143, 214, 73, 63),
+                                Color.fromARGB(197, 101, 25, 50),
                                 // Color.fromARGB(183, 75, 123, 76),
                               ],
                               begin: Alignment.topLeft,
@@ -361,9 +377,12 @@ class _SingleDonateScreenState extends State<SingleDonateScreen> {
       ),
       child: Row(
         children: [
-          Icon(icon),
-          const SizedBox(width: 10),
-          Text(text),
+          Icon(icon, size: 20),
+          const SizedBox(width: 5),
+          Text(
+            text,
+            overflow: TextOverflow.ellipsis,
+          ),
         ],
       ),
     );

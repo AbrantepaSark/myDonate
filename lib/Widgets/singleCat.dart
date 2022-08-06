@@ -1,12 +1,13 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-import '../Screens/single_cat_screen.dart';
+import '../Screens/cat_donates_screen.dart';
 
 class SingleCat extends StatelessWidget {
   final String catName;
-  final IconData catIcon;
+  final String catIcon;
   final Color color;
   const SingleCat(
       {Key? key,
@@ -18,10 +19,10 @@ class SingleCat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.of(context).pushNamed(SingleCatScreen.routeName),
+      onTap: () => Navigator.of(context).pushNamed(CatDonated.routeName),
       child: SizedBox(
-        height: 200,
-        width: 140,
+        height: 140,
+        width: 160,
         child: Card(
           color: color,
           shape: RoundedRectangleBorder(
@@ -31,20 +32,16 @@ class SingleCat extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
+              SvgPicture.asset(
                 catIcon,
-                size: 50,
+                height: 30,
                 color: Colors.white,
+                allowDrawingOutsideViewBox: true,
               ),
-              const SizedBox(height: 10),
-              const Divider(color: Colors.white),
               const SizedBox(height: 10),
               Text(
                 catName,
-                style: const TextStyle(
-                    fontSize: 17,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white),
+                style: const TextStyle(fontSize: 15, color: Colors.white),
               )
             ],
           ),

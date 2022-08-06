@@ -10,6 +10,7 @@ import './Screens/CreateDonation.dart';
 import './Screens/UserDashboard/Dashboard.dart';
 import './Screens//single_donate.dart';
 import './Screens/single_cat_screen.dart';
+import './Screens/cat_donates_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
         Dashboard.routeName: (ctx) => const Dashboard(),
         SingleDonateScreen.routeName: (ctx) => const SingleDonateScreen(),
         SingleCatScreen.routeName: (ctx) => const SingleCatScreen(),
+        CatDonated.routeName: (ctx) => const CatDonated(),
       },
     );
   }
