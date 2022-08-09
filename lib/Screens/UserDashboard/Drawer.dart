@@ -46,22 +46,6 @@ class CustomDrawer extends StatelessWidget {
               ],
             ),
           ),
-          // ListTile(
-          //   leading: const Icon(Icons.add_chart_outlined),
-          //   title: const Text(
-          //     'Summary',
-          //     style: TextStyle(fontSize: 16.0),
-          //   ),
-          //   onTap: () {},
-          // ),
-          // ListTile(
-          //   leading: const Icon(Icons.account_balance_wallet_outlined),
-          //   title: const Text(
-          //     'Funds',
-          //     style: TextStyle(fontSize: 16.0),
-          //   ),
-          //   onTap: () {},
-          // ),
           ListTile(
             leading: const Icon(LineIcons.heart),
             title: const Text(

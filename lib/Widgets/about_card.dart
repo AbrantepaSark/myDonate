@@ -24,8 +24,8 @@ class AboutCard extends StatelessWidget {
           children: [
             Positioned(
               top: size.width * .12,
-              left: size.width * 0.1,
-              right: size.width * 0.1,
+              left: size.width * 0.02,
+              right: size.width * 0.02,
               child: Container(
                 height: 280,
                 //alignment: Alignment.bottomCenter,
@@ -65,7 +65,7 @@ class AboutCard extends StatelessWidget {
               ),
             ),
             Positioned(
-              left: size.width * 0.36,
+              left: size.width * 0.37,
               child: Container(
                 height: 70,
                 width: 70,

@@ -69,41 +69,68 @@ class _DashboardState extends State<Dashboard> {
               ],
             ),
           ),
-          ListTile(
-            leading: const Icon(LineIcons.barChart),
-            title: const Text(
-              'Summary',
-              style: TextStyle(fontSize: 16.0),
-            ),
-            onTap: () {
+          drawerItem(
+            context,
+            Icons.bar_chart_outlined,
+            "Summary",
+            () {
               setState(() {
                 currentPage = DashboardSections.summary;
                 Navigator.of(context).pop();
               });
             },
           ),
-          ListTile(
-            leading: const Icon(LineIcons.wallet),
-            title: const Text(
-              'Funds',
-              style: TextStyle(fontSize: 16.0),
-            ),
-            onTap: () {
+          drawerItem(
+            context,
+            LineIcons.wallet,
+            "Funds",
+            () {
               setState(() {
                 currentPage = DashboardSections.funds;
                 Navigator.of(context).pop();
               });
             },
           ),
-          ListTile(
-            leading: const Icon(LineIcons.heart),
-            title: const Text(
-              'Donations',
-              style: TextStyle(fontSize: 16.0),
-            ),
-            onTap: () {
+          drawerItem(
+            context,
+            LineIcons.heart,
+            "Donations",
+            () {
               setState(() {
                 currentPage = DashboardSections.donation;
+                Navigator.of(context).pop();
+              });
+            },
+          ),
+          drawerItem(
+            context,
+            LineIcons.question,
+            "FAQs",
+            () {
+              setState(() {
+                currentPage = DashboardSections.fAQ;
+                Navigator.of(context).pop();
+              });
+            },
+          ),
+          drawerItem(
+            context,
+            LineIcons.key,
+            "Privacy Policy",
+            () {
+              setState(() {
+                currentPage = DashboardSections.privacy;
+                Navigator.of(context).pop();
+              });
+            },
+          ),
+          drawerItem(
+            context,
+            LineIcons.book,
+            "Terms & Conditions",
+            () {
+              setState(() {
+                currentPage = DashboardSections.terms;
                 Navigator.of(context).pop();
               });
             },
@@ -181,10 +208,25 @@ class _DashboardState extends State<Dashboard> {
       drawer: drawer2,
     );
   }
+
+  ListTile drawerItem(BuildContext context, IconData icon, String text,
+      Function onClickHandler) {
+    return ListTile(
+      leading: Icon(icon),
+      title: Text(
+        text,
+        style: const TextStyle(fontSize: 16.0),
+      ),
+      onTap: () => onClickHandler(),
+    );
+  }
 }
 
 enum DashboardSections {
   summary,
   funds,
   donation,
+  fAQ,
+  privacy,
+  terms,
 }
