@@ -44,8 +44,9 @@ class AboutCard extends StatelessWidget {
                       ),
                     ]),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  //mainAxisAlignment: MainAxisAlignment.end,
                   children: [
+                    const SizedBox(height: 30),
                     Text(
                       title,
                       style: const TextStyle(
@@ -56,7 +57,7 @@ class AboutCard extends StatelessWidget {
                     const SizedBox(height: 12),
                     Text(
                       text,
-                      style: const TextStyle(color: Colors.grey),
+                      style: TextStyle(color: Colors.grey[700]),
                       textAlign: TextAlign.center,
                     ),
                   ],
@@ -66,8 +67,8 @@ class AboutCard extends StatelessWidget {
             Positioned(
               left: size.width * 0.36,
               child: Container(
-                height: 80,
-                width: 80,
+                height: 70,
+                width: 70,
                 padding: const EdgeInsets.all(18),
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(80)),

@@ -21,8 +21,8 @@ class SingleCat extends StatelessWidget {
     return GestureDetector(
       onTap: () => Navigator.of(context).pushNamed(CatDonated.routeName),
       child: SizedBox(
-        height: 140,
-        width: 160,
+        height: 120,
+        width: 150,
         child: Card(
           color: color,
           shape: RoundedRectangleBorder(
