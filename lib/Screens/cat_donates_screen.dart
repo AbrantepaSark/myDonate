@@ -36,7 +36,6 @@ class CatDonated extends StatelessWidget {
           icon: const Icon(Icons.arrow_back_ios_new),
         ),
         title: const Text('Health'),
-        centerTitle: false,
       ),
       body: SafeArea(
         child: SingleChildScrollView(

@@ -34,14 +34,14 @@ class SingleCat extends StatelessWidget {
             children: [
               SvgPicture.asset(
                 catIcon,
-                height: 30,
+                height: 40,
                 color: Colors.white,
                 allowDrawingOutsideViewBox: true,
               ),
               const SizedBox(height: 10),
               Text(
                 catName,
-                style: const TextStyle(fontSize: 15, color: Colors.white),
+                style: const TextStyle(fontSize: 16, color: Colors.white),
               )
             ],
           ),
