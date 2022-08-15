@@ -4,15 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 //import 'package:line_icons/line_icons.dart';
 
-class SummaryScreen extends StatefulWidget {
+class SummaryScreen extends StatelessWidget {
   final double height;
   const SummaryScreen({Key? key, required this.height}) : super(key: key);
 
-  @override
-  State<SummaryScreen> createState() => _SummaryScreenState();
-}
-
-class _SummaryScreenState extends State<SummaryScreen> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -63,7 +58,7 @@ class _SummaryScreenState extends State<SummaryScreen> {
         children: [
           SvgPicture.asset(
             icon,
-            height: 46,
+            height: 43,
             color: const Color.fromARGB(255, 9, 39, 65),
             allowDrawingOutsideViewBox: true,
           ),

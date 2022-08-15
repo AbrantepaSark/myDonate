@@ -4,14 +4,9 @@ import 'package:flutter/material.dart';
 
 import '../Searchbar.dart';
 
-class DonationScreen extends StatefulWidget {
+class DonationScreen extends StatelessWidget {
   const DonationScreen({Key? key}) : super(key: key);
 
-  @override
-  State<DonationScreen> createState() => _DonationScreenState();
-}
-
-class _DonationScreenState extends State<DonationScreen> {
   @override
   Widget build(BuildContext context) {
     return Column(

@@ -5,9 +5,12 @@ import 'package:line_icons/line_icons.dart';
 //import 'package:flutter_svg/flutter_svg.dart';
 
 // import './Drawer.dart';
-import './Screens/Summary.dart';
-import './Screens/Funds.dart';
-import './Screens/Donation.dart';
+import 'Screens/summary.dart';
+import 'Screens/funds.dart';
+import 'Screens/donation.dart';
+import 'Screens/questions.dart';
+import 'Screens/policy.dart';
+import 'Screens/terms.dart';
 
 class Dashboard extends StatefulWidget {
   static const routeName = '/user_dashboard';
@@ -32,6 +35,12 @@ class _DashboardState extends State<Dashboard> {
       container = const FundsScreen();
     } else if (currentPage == DashboardSections.donation) {
       container = const DonationScreen();
+    } else if (currentPage == DashboardSections.fAQ) {
+      container = const FAQs();
+    } else if (currentPage == DashboardSections.privacy) {
+      container = const Policy();
+    } else if (currentPage == DashboardSections.terms) {
+      container = const Terms();
     }
 
     var drawer2 = Drawer(
@@ -143,11 +152,15 @@ class _DashboardState extends State<Dashboard> {
         elevation: 0,
         backgroundColor: Colors.transparent,
         title: const Text('My Account'),
-        titleTextStyle: const TextStyle(color: Colors.black),
+        titleTextStyle: const TextStyle(color: Colors.black, fontSize: 18),
         leading: Builder(
           builder: (context) => // Ensure Scaffold is in context
               IconButton(
-                  icon: const Icon(Icons.menu, color: Colors.black),
+                  icon: const Icon(
+                    Icons.menu,
+                    color: Colors.black,
+                    size: 30,
+                  ),
                   onPressed: () => Scaffold.of(context).openDrawer()),
         ),
       ),
