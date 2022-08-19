@@ -57,21 +57,21 @@ class CategoryScreen extends StatelessWidget {
     return SafeArea(
       child: Column(
         children: [
-          Container(
-            margin: const EdgeInsets.symmetric(
-              horizontal: 15,
-              vertical: 5,
-            ),
-            height: 50,
-            width: double.infinity,
-            alignment: Alignment.center,
-            color: Colors.grey[300],
-            child: const Text(
-              'Categories',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-            ),
-          ),
-          const SizedBox(height: 10),
+          // Container(
+          //   margin: const EdgeInsets.symmetric(
+          //     horizontal: 15,
+          //     vertical: 5,
+          //   ),
+          //   height: 50,
+          //   width: double.infinity,
+          //   alignment: Alignment.center,
+          //   color: Colors.grey[300],
+          //   child: const Text(
+          //     'Categories',
+          //     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+          //   ),
+          // ),
+          // const SizedBox(height: 10),
           Expanded(
             child: GridView.count(
               padding: const EdgeInsets.all(15),

@@ -21,6 +21,7 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
+  //final List<MyItem> _items = [MyItem(header: 'header', body: 'body')];
   var currentPage = DashboardSections.summary;
 
   @override
@@ -169,50 +170,7 @@ class _DashboardState extends State<Dashboard> {
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           child: Column(
             children: [
-              Container(
-                height: 110,
-                width: double.infinity,
-                padding: const EdgeInsets.all(15),
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(15)),
-                  gradient: LinearGradient(
-                    colors: [
-                      Color.fromARGB(255, 3, 98, 240),
-                      // Color.fromARGB(143, 214, 73, 63),
-                      Color.fromARGB(183, 75, 123, 76),
-                    ],
-                    begin: Alignment.topLeft,
-                    end: Alignment.topRight,
-                  ),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Text(
-                      "Welcome,",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15),
-                    ),
-                    Text(
-                      '0x00067gj78fddkjg',
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                    Text(
-                      'Check your Statistics on myDonate',
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ],
-                ),
-              ),
+              if (currentPage == DashboardSections.summary) const UserInfo(),
               container,
             ],
           ),
@@ -231,6 +189,58 @@ class _DashboardState extends State<Dashboard> {
         style: const TextStyle(fontSize: 16.0),
       ),
       onTap: () => onClickHandler(),
+    );
+  }
+}
+
+class UserInfo extends StatelessWidget {
+  const UserInfo({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 110,
+      width: double.infinity,
+      padding: const EdgeInsets.all(15),
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(15)),
+        gradient: LinearGradient(
+          colors: [
+            Color.fromARGB(255, 3, 98, 240),
+            // Color.fromARGB(143, 214, 73, 63),
+            Color.fromARGB(183, 75, 123, 76),
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.topRight,
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: const [
+          Text(
+            "Welcome,",
+            style: TextStyle(
+                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15),
+          ),
+          Text(
+            '0x00067gj78fddkjg',
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+          Text(
+            'Check your Statistics on myDonate',
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(color: Colors.white),
+          ),
+        ],
+      ),
     );
   }
 }
